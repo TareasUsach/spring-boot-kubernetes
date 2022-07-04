@@ -1,7 +1,10 @@
 pool:
   vmImage: ubuntu-latest
-
+  
 jobs:
+
+
+  
 
 - job: sonar
   workspace:
@@ -15,3 +18,9 @@ jobs:
       projectKey: 'TareasUsach_spring-boot-kubernetes'
       projectName: 'spring-boot-kubernetes'
     displayName: 'Preparing Sonarqube Environment'
+
+    
+  - task: SonarCloudPublish@1
+    inputs:
+      pollingTimeoutSec: '300'
+    displayName: 'Publish Analysis Results'
