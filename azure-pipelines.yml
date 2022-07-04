@@ -2,7 +2,7 @@ pool:
   vmImage: ubuntu-latest
 
 jobs:
-  - 
+
 - job: sonar
   workspace:
     clean: all
