@@ -10,6 +10,6 @@ pool:
     inputs:
       SonarCloud: 'DevSecOps'
       organization: 'TareasUsach'
-      projectKey: 'tareasusach'
-      projectName: 'TareasUsach_spring-boot-kubernetes'
+      projectKey: 'TareasUsach_spring-boot-kubernetes'
+      projectName: 'spring-boot-kubernetes'
     displayName: 'Preparing Sonarqube Environment'
