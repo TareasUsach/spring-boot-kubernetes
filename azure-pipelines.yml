@@ -15,5 +15,5 @@ pool:
       SonarCloud: 'DevSecOps'
       organization: 'TareasUsach'
       projectKey: 'tareasusach'
-      projectName: 'spring-boot-kubernetes'
+      projectName: 'TareasUsach_spring-boot-kubernetes'
     displayName: 'Preparing Sonarqube Environment'
