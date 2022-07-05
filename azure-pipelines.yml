@@ -16,16 +16,17 @@ jobs:
       projectName: 'spring-boot-kubernetes'
     displayName: 'Preparing Sonarqube Environment'
 
-- task: Gradle@3
+- task: Maven@3
   inputs:
-     gradleWrapperFile: 'gradlew'
-     task: "sonarqube"
-     javaHomeOption: 'JDKVersion'
-     sonarQubeRunAnalysis: true
-     sqGradlePluginVersionChoice: 'specify'
-     sonarQubeGradlePluginVersion: '3.3'
-  displayName: 'Analyze current Branch'
-
+    mavenPomFile: 'pom.xml'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: true
+    sqMavenPluginVersionChoice: 'latest'
 
     
   - task: SonarCloudPublish@1
