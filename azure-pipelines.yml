@@ -16,6 +16,17 @@ jobs:
       projectName: 'spring-boot-kubernetes'
     displayName: 'Preparing Sonarqube Environment'
 
+- task: Gradle@3
+  inputs:
+     gradleWrapperFile: 'gradlew'
+     task: "sonarqube"
+     javaHomeOption: 'JDKVersion'
+     sonarQubeRunAnalysis: true
+     sqGradlePluginVersionChoice: 'specify'
+     sonarQubeGradlePluginVersion: '3.3'
+  displayName: 'Analyze current Branch'
+
+
     
   - task: SonarCloudPublish@1
     inputs:
