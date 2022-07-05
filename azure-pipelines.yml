@@ -16,6 +16,9 @@ jobs:
       projectName: 'spring-boot-kubernetes'
     displayName: 'Preparing Sonarqube Environment'
 
+
+
+
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
