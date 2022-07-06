@@ -16,17 +16,6 @@ jobs:
       projectName: 'spring-boot-kubernetes'
     displayName: 'Preparing Sonarqube Environment'
 
-  - task: sonarcloud-buildbreaker@2
-    inputs:
-      SonarCloud: 'DevSecOps'
-      organization: 'tareasusach'
-
-    
-  - task: SonarCloudPublish@1
-    inputs:
-      pollingTimeoutSec: '300'
-    displayName: 'Publish Analysis Results'
-
 
 
   - task: Maven@3
@@ -41,6 +30,17 @@ jobs:
       sonarQubeRunAnalysis: true
       sqMavenPluginVersionChoice: 'latest'
 
+
+  - task: sonarcloud-buildbreaker@2
+    inputs:
+      SonarCloud: 'DevSecOps'
+      organization: 'tareasusach'
+
+    
+  - task: SonarCloudPublish@1
+    inputs:
+      pollingTimeoutSec: '300'
+    displayName: 'Publish Analysis Results'
 #  - task: dependency-check-build-task@6
 #    inputs:
 #      projectName: 'spring-boot-kubernetes'
