@@ -17,11 +17,6 @@ jobs:
     displayName: 'Preparing Sonarqube Environment'
 
 
-- task: sonarcloud-buildbreaker@2
-  inputs:
-    SonarCloud: 'DevSecOps'
-    organization: 'tareasusach'
-
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
@@ -33,6 +28,11 @@ jobs:
     effectivePomSkip: false
     sonarQubeRunAnalysis: true
     sqMavenPluginVersionChoice: 'latest'
+
+- task: sonarcloud-buildbreaker@2
+  inputs:
+    SonarCloud: 'DevSecOps'
+    organization: 'tareasusach'
 
     
   - task: SonarCloudPublish@1
