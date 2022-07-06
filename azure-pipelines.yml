@@ -36,6 +36,6 @@ jobs:
 
     
 - task: SonarCloudPublish@1
-    inputs:
-      pollingTimeoutSec: '300'
-    displayName: 'Publish Analysis Results'
+  inputs:
+    pollingTimeoutSec: '300'
+  displayName: 'Publish Analysis Results'
