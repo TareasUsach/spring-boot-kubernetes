@@ -15,4 +15,5 @@ public class ConfigMapPodInjectionProperties {
     String name;
 
     String blog;
+    String password = 123;
 }
