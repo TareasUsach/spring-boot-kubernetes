@@ -16,5 +16,5 @@ public class UserConfig {
 
     String name;
     String blog;
-    String password = 123;
+    String password = "123";
 }
