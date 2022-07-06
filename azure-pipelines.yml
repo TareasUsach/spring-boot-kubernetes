@@ -41,9 +41,9 @@ jobs:
       sonarQubeRunAnalysis: true
       sqMavenPluginVersionChoice: 'latest'
 
-- task: dependency-check-build-task@6
-  inputs:
-    projectName: 'spring-boot-kubernetes'
-    scanPath: '$(Pipeline.Workspace)'
-    format: 'HTML'
-    failOnCVSS: '1'
+  - task: dependency-check-build-task@6
+    inputs:
+      projectName: 'spring-boot-kubernetes'
+      scanPath: '$(Pipeline.Workspace)'
+      format: 'HTML'
+      failOnCVSS: '1'
