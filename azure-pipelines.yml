@@ -17,25 +17,25 @@ jobs:
     displayName: 'Preparing Sonarqube Environment'
 
 
-- task: Maven@3
-  inputs:
-    mavenPomFile: 'pom.xml'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    javaHomeOption: 'JDKVersion'
-    mavenVersionOption: 'Default'
-    mavenAuthenticateFeed: false
-    effectivePomSkip: false
-    sonarQubeRunAnalysis: true
-    sqMavenPluginVersionChoice: 'latest'
+  - task: Maven@3
+    inputs:
+      mavenPomFile: 'pom.xml'
+      publishJUnitResults: true
+      testResultsFiles: '**/surefire-reports/TEST-*.xml'
+      javaHomeOption: 'JDKVersion'
+      mavenVersionOption: 'Default'
+      mavenAuthenticateFeed: false
+      effectivePomSkip: false
+      sonarQubeRunAnalysis: true
+      sqMavenPluginVersionChoice: 'latest'
 
-- task: sonarcloud-buildbreaker@2
-  inputs:
-    SonarCloud: 'DevSecOps'
-    organization: 'tareasusach'
+  - task: sonarcloud-buildbreaker@2
+    inputs:
+      SonarCloud: 'DevSecOps'
+      organization: 'tareasusach'
 
     
-- task: SonarCloudPublish@1
-  inputs:
-    pollingTimeoutSec: '300'
-  displayName: 'Publish Analysis Results'
+  - task: SonarCloudPublish@1
+    inputs:
+      pollingTimeoutSec: '300'
+    displayName: 'Publish Analysis Results'
