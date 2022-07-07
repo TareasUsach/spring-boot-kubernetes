@@ -44,7 +44,7 @@ jobs:
   - task: CopyFiles@2
     inputs:
       sourceFolder: '$(Build.SourcesDirectory)'
-      Contents: '**/build/libs/*.jar'
+      Contents: '**/target/*.jar'
       TargetFolder: '$(Build.ArtifactStagingDirectory)'
       
       
