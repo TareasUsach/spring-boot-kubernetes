@@ -67,4 +67,4 @@ jobs:
       projectName: 'spring-boot-kubernetes'
       scanPath: '$(Pipeline.Workspace)'
       format: 'HTML'
-      failOnCVSS: '10'
+      failOnCVSS: '1'
