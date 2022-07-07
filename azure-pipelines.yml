@@ -39,6 +39,27 @@ jobs:
       effectivePomSkip: false
       sonarQubeRunAnalysis: true
       sqMavenPluginVersionChoice: 'latest'
+      
+      
+  - task: CopyFiles@2
+    inputs:
+      sourceFolder: '$(Build.SourcesDirectory)'
+      Contents: '**/build/libs/*.jar'
+      TargetFolder: '$(Build.ArtifactStagingDirectory)'
+      
+      
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+          ArtifactName: 'appJar'
+          publishLocation: 'Container'
+
+- task: DownloadBuildArtifacts@0
+  inputs:
+    buildType: 'current'
+    downloadType: 'single'
+    artifactName: 'appJar'
+    downloadPath: '$(System.ArtifactsDirectory)'
 
 
   - task: dependency-check-build-task@6
